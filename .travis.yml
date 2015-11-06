@@ -1,0 +1,16 @@
+language: node_js
+sudo: false
+
+node_js:
+  - "0.10"
+  - "0.11"
+  - "0.12"
+  - "4.2"
+
+env:
+  - CODECLIMATE_REPO_TOKEN=73fbe196e648dcc6601be95b694c28dded21710a8bbea1f026f64bb1abd973fd
+
+after_success:
+  - npm run-script coverage
+  - npm run-script codeclimate
+
